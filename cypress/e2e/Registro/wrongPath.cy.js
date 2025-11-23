@@ -1,4 +1,4 @@
-describe('Aserciones',()=>{
+describe('mensajeErrorPass',()=>{
     beforeEach(()=>{
         cy.visit('https://ticketazo.com.ar/auth/registerUser')
     })
@@ -19,7 +19,6 @@ describe('Aserciones',()=>{
         cy.get('[data-cy="input-repetir-password"]').type('123')
         cy.get('[data-cy="btn-registrarse"]').click()
         cy.get('[data-cy="error-message"]').contains('La contraseña debe tener al menos 6 caracteres')
-
         cy.get('[data-cy="input-password"]').type('123456')
         cy.get('[data-cy="input-repetir-password"]').type('123456')
         cy.get('[data-cy="btn-registrarse"]').click()
