@@ -1,0 +1,30 @@
+[  
+  {
+  "nombres": "Juan Compras",
+  "apellido": "Perez Compras",
+  "telefono": "1144552233",
+  "DNI": "43225564",
+  "provincia": "Chaco",
+  "localidad": "Basail",
+  "fechaNacimiento": {
+    "day": "14",
+    "month": "01",
+    "year": "1997"
+  },
+  "password": "Compras1234%",
+  "repetirPassword": "Compras1234%",
+  "emailExistente": "juancomprasa@gmail.com"
+  },
+  {
+    "razon_Social":"Pepe Eventos",
+    "cuit": "20443367423",
+    "provincia":"Chubut",
+    "localidad":"Acceso Norte",
+    "direccion":"Pep",
+    "telefono":"1156254125",
+    "email":"pepe@evento.com",
+    "pass":"EventPep12"
+  }
+]
+
+
