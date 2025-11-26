@@ -8,11 +8,11 @@
 
 ## 2. Requeridos
 - Node.js
-- Cypress
+- Cypress v15.7.0
 - Git
 
 ## 3. Plan de pruebas
-- https://docs.google.com/spreadsheets/d/1ZROJcBIqg2uwvGmrQnZUVVv90EiO0M_t
+- https://docs.google.com/spreadsheets/d/1p_zusqXv3iD5mESoPfnsZ8b0kX09l8e-oNh7hkqqn-Q
 
 ## 4. Trello
 - https://trello.com/b/HgFQD6Ny/challenge-qa
@@ -26,13 +26,13 @@
 - Ale Prieto
 
 ## 6. Instalación Cypress
-npm install cypress
+npm install cypress@15.7.0 --save-dev
 
 ## 7. Ejecución Cypress
 npx cypress open
 
 ## 8. Herramientas
-- Cypress
+- Cypress v15.7.0
 - Node.js
 - GitHub
 - Trello
