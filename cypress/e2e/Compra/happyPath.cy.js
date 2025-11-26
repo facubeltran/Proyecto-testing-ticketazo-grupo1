@@ -37,7 +37,7 @@ describe('Compras con Login', () => {
         cy.contains('Asientos').should('contain', 'Asientos seleccionados: 2');
     })
 
-    it.only('Caso 4: Seleccion de asientos disponibles(Sin butacas)', () => {
+    it('Caso 4: Seleccion de asientos disponibles(Sin butacas)', () => {
         cy.get('[data-cy="btn-ver-evento-1"]').click()
         cy.contains('Adquirir entrada').click()
         cy.contains('Sin Butacas').click()
@@ -49,12 +49,37 @@ describe('Compras con Login', () => {
                 // 2. Convertimos: De texto ("16200") a Número real (16200) para poder sumar/comparar
                 const precioFinal = parseInt(soloNumeroStr);
                 cy.log(precioFinal);
-                let valorTotal= precioFinal * 3 
+                let valorTotal = precioFinal * 3
                 cy.get('span').should('contain', valorTotal);
             })
-
-
     })
+    it('Caso 5: Seleccion de asientos disponibles(mesas)', () => {
+        cy.get('[data-cy="btn-ver-evento-11"]').click()
+        cy.contains('Adquirir entrada').click()
+        cy.contains('Mesa 5').click()
+        cy.get('button[title="Fila 1, Columna 4"]').click()
+        cy.get('button[title="Fila 1, Columna 5"]').click()
+        cy.contains('F1 C4').should('be.exist')
+        cy.contains('F1 C5').should('be.exist')
+        cy.contains('Asientos').should('contain', 'Asientos seleccionados: 2');
+    })
+
+    it.only('Caso 6: Seleccion de asientos disponibles(butacas)', () => {
+        cy.get('[data-cy="btn-ver-evento-9"]').click()
+        cy.contains('Adquirir entrada').click().wait(1000)
+        cy.contains('span', 'sábado, 21 de junio de 2025').click('top');
+        cy.contains('23:00').click()
+        cy.contains('Continuar con la compra').click()
+        cy.contains('Audiotorio').click()
+        cy.get('button[title="Fila 5, Columna 7"]').click()
+        cy.get('button[title="Fila 5, Columna 8"]').click()
+        cy.contains('F5 C7').should('be.exist')
+        cy.contains('F5 C8').should('be.exist')
+        cy.contains('Asientos').should('contain', 'Asientos seleccionados: 2');
+    })
+    // no pude hacerlos con las otras fechas por un tema de diseño, no se si se superponian los div's que no agarraba el del sabado 14, creo que se superponia por el efecto ese de la card con el domingo 15
+    // asi que agarre el ultimo para que pase la prueba, despues veo si lo puedo arreglar
+    
 
 })
 
