@@ -36,8 +36,8 @@ describe('mensajeErrorPass',()=>{
     it('emailInvalido',()=>{
         cy.get('[data-cy="input-email"]').type(numeroRandom)
         cy.get('[data-cy="btn-enviar"]').click()
-        cy.get('[data-slot="error-message"]')
-        .should('include.text','Incluye un signo "@" en la dirección de correo electrónico. La dirección')
+        cy.get('[data-slot="error-message"]').invoke('text')
+        .should('match',/Incluye un signo "@" en la dirección de correo electrónico|Please include an '@' in the email address/)
         cy.get('[data-cy="success-message"]')
         .contains('Se ha enviado un correo para restablecer la contraseña')
     })
