@@ -1,5 +1,2 @@
 import './commands'
-import './commandsCompra/commands'
-import './commandsLogin/commands'
-import './commandsResgistro/commands'
 import './akommands'
