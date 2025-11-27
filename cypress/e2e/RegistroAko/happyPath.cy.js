@@ -1,3 +1,4 @@
+import{buttonTests}from'../../support/sharedTests'
 import{generarNumeroRandom}from'../../support/functions'
 import{generarEmailRandom}from'../../support/functions'
 const viewports=['macbook-15','iphone-6']
@@ -12,8 +13,8 @@ viewports.forEach((vp)=>{
             cy.visit('https://ticketazo.com.ar/auth/registerUser')
         })
         it('crearUsuario',()=>{
-            cy.get('[data-cy="input-nombres"]').type('Juan')
-            cy.get('[data-cy="input-apellido"]').type('Carlo')
+            cy.get('[data-cy="input-nombres"]').type(':3')
+            cy.get('[data-cy="input-apellido"]').type(':3')
             cy.get('[data-cy="input-telefono"]').type('1234567890')
             cy.get('[data-cy="input-dni"]').type(numeroRandom)
             cy.get('[data-cy="select-provincia"]').type('Cordoba{enter}')
@@ -28,22 +29,6 @@ viewports.forEach((vp)=>{
             cy.get('[data-cy="btn-registrarse"]').click()
             cy.url().should('eq','https://ticketazo.com.ar/auth/login')
         })
-        it('iniciaSesionButton',()=>{
-            cy.get('[data-cy="btn-login-link"]').click()
-            cy.url().should('eq','https://ticketazo.com.ar/auth/login')
-        })
-        it('loginButton',()=>{
-            cy.get('button').contains('Login').click({force:true})
-            cy.url().should('eq','https://ticketazo.com.ar/auth/login')
-        })
-        it('logoWeb',()=>{
-            cy.contains('a','Ticketazo').click()
-            cy.url().should('eq','https://ticketazo.com.ar/')
-        })
-        it('switchThemeButton',()=>{
-            cy.get('html').should('have.class','dark')
-            cy.get('svg[role="presentation"]:visible').first().click()
-            cy.get('html').should('have.class','light')
-        })
+        buttonTests()
     })
 })

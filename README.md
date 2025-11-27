@@ -13,6 +13,7 @@
 
 ## 3. Plan de pruebas
 - https://docs.google.com/spreadsheets/d/1p_zusqXv3iD5mESoPfnsZ8b0kX09l8e-oNh7hkqqn-Q
+- Dentro del plan de pruebas se destacan los casos críticos con un fondo verde y un recuadro negro.
 
 ## 4. Trello
 - https://trello.com/b/HgFQD6Ny/challenge-qa
@@ -37,3 +38,12 @@ npx cypress open
 - GitHub
 - Trello
 - Google Sheets
+
+### Estructura de Ako
+- No utilicé fixtures porque no me parecieron necesarios.
+- Utilicé commands para completar los registros de cliente y usuario. Dejé un command para datos fijos y un command para datos variables (este último compartido entre ambos registros).
+- Utilicé un command para ordenar los assert de los campos vacíos.
+- Utilicé un archivo de functions para generar emails randoms y para números aleatorios de 8 cifras (DNI).
+- Utilicé un archivo de sharedTests para ordenar test cases que tenían varios it repetidos.
+- A cada assert le agregué su versión correspondiente a los idiomas español e inglés en todas sus variantes (siendo más de dos assert en algunos casos).
+- Agregué mi nombre a cada carpeta que automaticé porque sí >:3

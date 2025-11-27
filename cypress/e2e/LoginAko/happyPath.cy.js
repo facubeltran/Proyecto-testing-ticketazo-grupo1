@@ -1,0 +1,32 @@
+const viewports=['macbook-15','iphone-6']
+viewports.forEach((vp)=>{
+    describe(`loginHappyPath:${vp}`,()=>{
+        beforeEach(()=>{
+            cy.viewport(vp)
+            cy.visit('https://ticketazo.com.ar/auth/login')
+        })
+        it('loginExitoso',()=>{
+            cy.get('[data-cy="input-email"]').type('homejo5153@filipx.com')
+            cy.get('[data-cy="input-password"]').type('Admin1234*')
+            cy.get('[data-cy="btn-login"]').click()
+            cy.url().should('eq','https://ticketazo.com.ar/')
+        })
+        it('googleButton',()=>{
+            cy.intercept('GET','**/auth/google').as('googleStart');
+            cy.get('[data-cy="btn-google-login"]').click();
+            cy.wait('@googleStart');
+        })
+        it('olvidasteTuContraseña',()=>{
+            cy.get('[data-cy="btn-forgot-password"]').click()
+            cy.url().should('eq','https://ticketazo.com.ar/auth/forgotPassword')
+        })
+        it('registroButton',()=>{
+            cy.get('[data-cy="btn-register-user"]').click()
+            cy.url().should('eq','https://ticketazo.com.ar/auth/registerUser')
+        })
+        it('eventoButton',()=>{
+            cy.get('[data-cy="btn-register-client"]').click()
+            cy.url().should('eq','https://ticketazo.com.ar/auth/registerClient')
+        })
+    })
+})
