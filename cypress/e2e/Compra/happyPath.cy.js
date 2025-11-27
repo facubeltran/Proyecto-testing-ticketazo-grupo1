@@ -1,4 +1,6 @@
-describe("Compras con Login", () => {
+const viewports=['macbook-15','iphone-6']
+viewports.forEach((vp)=>{
+    describe(`Compras con login:${vp}`, () => {
   beforeEach(() => {
     cy.visit("https://ticketazo.com.ar/auth/login");
     cy.fixture("compra").then((data) => {
@@ -18,10 +20,10 @@ describe("Compras con Login", () => {
     cy.get('[data-cy="btn-ver-evento-4"]').click();
     cy.contains("Adquirir entrada").click();
     cy.contains("Con Butacas").click();
-    cy.get('button[title="Fila 5, Columna 17"]').click();
-    cy.get('button[title="Fila 5, Columna 18"]').click();
-    cy.contains("F5 C17").should("be.exist");
-    cy.contains("F5 C18").should("be.exist");
+    cy.get('button[title="Fila 8, Columna 15"]').click();
+    cy.get('button[title="Fila 8, Columna 16"]').click();
+    cy.contains("F8 C15").should("be.exist");
+    cy.contains("F8 C16").should("be.exist");
     cy.contains("Asientos").should("contain", "Asientos seleccionados: 2");
   });
 
@@ -108,7 +110,7 @@ describe("Compras con Login", () => {
     cy.contains("Adquirir entrada").click();
     cy.contains("Sin Butacas").click();
     cy.contains("+").click().click();
-    cy.contains("Comprar").click().wait(1000);
+    cy.contains("Comprar").click().wait(2000);
     cy.get("input").check({ force: true });
     cy.window().then((win) => {
       // 1. Creamos el espía (stub) sobre la función 'open'
@@ -156,7 +158,7 @@ describe("Compras con Login", () => {
     //para este test, al no poder eliminar los lugares comprados
     //cada vez que ejecute el test me va a dar error a menos
     //que cambie las coordenadas, asi que lo dejo en skip
-    it.skip("Caso 16: Informacion de Terminos y condiciones", () => {
+    it.skip("Caso 16: Compra sin seleccionar cantidad de entradas", () => {
     cy.get('input[type="search"]').type('G2D')
     cy.get('[data-cy="btn-ver-evento-466"]').click();
     cy.contains("Adquirir entrada").click();
@@ -168,3 +170,6 @@ describe("Compras con Login", () => {
     });
     
 });
+})
+
+

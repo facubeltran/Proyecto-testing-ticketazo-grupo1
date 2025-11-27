@@ -1,4 +1,6 @@
-describe("Compras sin login", () => {
+const viewports=['macbook-15','iphone-6']
+viewports.forEach((vp)=>{
+  describe(`Compras sin login:${vp}`, () => {
   it("Caso 2: Visualizar eventos disponibles", () => {
     cy.visit("https://ticketazo.com.ar");
     cy.get('[data-cy="btn-ver-evento-7"]').click();
@@ -11,7 +13,7 @@ describe("Compras sin login", () => {
   });
 });
 
-describe("Compras con Login", () => {
+describe(`Compras sin login:${vp}`, () => {
   beforeEach(() => {
     cy.visit("https://ticketazo.com.ar/auth/login");
     cy.fixture("compra").then((data) => {
@@ -84,3 +86,7 @@ describe("Compras con Login", () => {
     cy.contains("Comprar").should("be.disabled");
   });
 });
+
+})
+
+
