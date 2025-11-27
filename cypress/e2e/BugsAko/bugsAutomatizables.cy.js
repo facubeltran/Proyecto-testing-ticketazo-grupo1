@@ -1,7 +1,7 @@
 // Estos test case no corresponden, solo los dejo porque estuve un rato largo pensándolos y después me enteré que no se automatizaban los bugs >:c 
 
 import{generarEmailRandom}from'../../support/functions'
-describe('mensajeErrorPass',()=>{
+describe('bugsAuto',()=>{
     let emailRandom
     beforeEach(()=>{
         emailRandom=generarEmailRandom()
