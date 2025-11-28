@@ -1,1 +1,1 @@
-// Dejar este `commands` para la correcta ejecución de los test cases, pero no utilizarlo por favor. Para los commands de cada test case se debe usar el correspondiente a la carpeta de cada flujo.
+// Dejar este `commands` para la correcta ejecución de los test cases, pero no utilizarlo por favor. Para los commands de cada test case se debe usar el correspondiente a la carpeta de cada colaborador.

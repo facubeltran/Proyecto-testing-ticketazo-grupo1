@@ -1,3 +1,5 @@
+// Me tomo la libertad de utilizar el nombre "akommands" para mi carpeta, ya que es mucho más fachero que "commandsAko". Pido disculpas encarecidamente si esto hiere la naming-sensivity del evaluador, pero me parece completamente necesario.
+
 Cypress.Commands.add('registroUsuarioFijo',()=>{
     cy.get('[data-cy="input-nombres"]').type(':3')
     cy.get('[data-cy="input-apellido"]').type(':3')
